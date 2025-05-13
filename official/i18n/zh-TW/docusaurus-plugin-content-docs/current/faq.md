@@ -10,8 +10,6 @@ sidebar_position: 9
 
 舊版本附加元件被禁用，[官網](https://immersivetranslate.com/) 解除安裝並安裝最新版本。
 
-![](https://s.immersivetranslate.com/assets/r2-uploads/20250315-164108.jpeg)
-
 ## 安裝相關
 
 ### 1. 如何更新擴充套件
@@ -222,6 +220,12 @@ Android：
 
 在[進階設定](https://dash.immersivetranslate.com/#advanced)中，開啟僅滑鼠模式即可。1.14.9 版本將優化這個模式判斷
 
+### 24. Edge 無法朗讀譯文
+
+Edge 瀏覽器的朗讀功能會根據原網頁的語言自動選擇對應的語音模型。由於這些語音模型是針對單一語言設計的，因此當頁面包含譯文時，預設選擇的語音模型無法正確朗讀譯文內容。
+
+解決方法：您可以在 Edge 朗讀功能的工具列中，點選【語音選項】，然後手動選擇與譯文語言相匹配的語音模型。這樣就能正確朗讀譯文內容了。
+
 ## 影片翻譯相關
 
 ### 1. Youtube 字幕設定樣式
@@ -279,6 +283,8 @@ YouTube 內建機翻字幕，繁體中文會出現格式錯誤，導致所有字
 
   ![](https://s.immersivetranslate.com/assets/allow-pdf-2.png)
 
+**注意**：Safari 瀏覽器對擴充套件存取本機檔案有嚴格限制，Safari 使用者請直接使用方法一，前往[沉浸式翻譯文件翻譯官網](https://app.immersivetranslate.com/)來翻譯本機檔案。
+
 ### 2. 頁數過多時 PDF 文件翻譯過慢
 
 建議裁剪為多個 100 頁以下的部分再進行翻譯，翻譯完成後再進行合併
@@ -289,7 +295,22 @@ YouTube 內建機翻字幕，繁體中文會出現格式錯誤，導致所有字
 
 ### 4. 是否有術語表 / 某些詞彙特殊翻譯或不翻譯
 
-我們提供術語表設定功能，您可以透過術語表來指定某些詞彙不被翻譯，或將其翻譯為特定內容。詳細設定請參閱“進階自定義”中的“自定義專業術語翻譯”部分：[點選這裡檢視](https://immersivetranslate.com/docs/advanced)
+1.16.1+ 支援 [AI 術語庫](https://dash.immersivetranslate.com/#terms) 功能。
+
+AI 術語庫預設不支援谷歌/微軟這類機器翻譯術語
+
+強行開啟方法：
+(ps: 機器翻譯採用的是佔位符替換，術語可能會導致翻譯品質下降)
+
+【[開發者設定](https://dash.immersivetranslate.com/#developer)】 -> 【Edit Full User Config】
+
+```
+{
+  ....
+  "enableMachineTranslateTerms":true,
+  ...
+}
+```
 
 ### 5. Word 文件翻譯後無法匯出為 Word 格式
 
